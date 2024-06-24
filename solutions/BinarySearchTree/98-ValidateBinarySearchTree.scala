@@ -14,7 +14,7 @@ object Solution:
       (root.value < min && isValidBST(root.left, root.value, max)) &&
       (root.value > max && isValidBST(root.right, min, root.value))
 
-class MyTests extends munit.FunSuite:
+class ValidateBinarySearchTreeSuite extends munit.FunSuite:
   test("98. Validate Binary Search Tree"):
     val testCases = Seq(
       (Array[Integer](5, 1, 4, null, null, 3, 6), false),
@@ -31,7 +31,7 @@ class MyTests extends munit.FunSuite:
       (Array[Integer](5, 2, 8, 1, 3, 6, 9, null, null, null, 4), true)
     )
     testCases.foreach: (input, expected) =>
-      val tree   = TreeNode(input)
+      val tree = TreeNode(input)
       val result = Solution.isValidBST(tree)
       assert(
         result == expected,
